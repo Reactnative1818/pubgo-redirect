@@ -1,1 +1,28 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Opening PubGo...</title>
+</head>
+<body>
+  <p>Opening app...</p>
+
+  <script>
+    const params = window.location.search;
+
+    window.location = "pubgo://" + params;
+
+    setTimeout(() => {
+      const isAndroid = /android/i.test(navigator.userAgent);
+      const isIOS = /iphone|ipad/i.test(navigator.userAgent);
+
+      if (isAndroid) {
+        window.location = "https://play.google.com/store/apps/details?id=com.whatsapp&hl=en_IN";
+      } else if (isIOS) {
+        window.location = "https://apps.apple.com/app/id YOUR_APP_ID";
+      }
+    }, 2000);
+  </script>
+</body>
+</html>
